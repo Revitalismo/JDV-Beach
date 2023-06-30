@@ -1,0 +1,144 @@
+/* css reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  } 
+*, *:before, *:after, svg {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+} 
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+} 
+ol, ul {
+    list-style: none;
+}  
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+:root {
+    --sun-1: radial-gradient(50% 50.00% at 50% 50.00%, #FFF 0%, #FFF4E0 100%);
+    --sun-2: linear-gradient(180deg, #FFC632 0%, #FA7A7B 100%);
+    
+    --sky-1: linear-gradient(180deg, #40F1F9 0%, #5FF8FD 54.25%, #86F9FC 73.73%, #A9FAFD 100%);
+    --sky-2: linear-gradient(180deg, #D03716 0%, #DD5D46 54.25%, rgba(219, 101, 85, 0.96) 73.73%, #E7726A 100%);
+
+    --ocean-1: radial-gradient(94.17% 94.17% at 50.03% 5.83%, #8BE9F9 0%, #00C5EA 41.67%, #00A2C0 79.17%, #0589D3 100%);
+    --ocean-2: radial-gradient(94.17% 94.17% at 50.03% 5.83%, #FC7C53 5.88%, #F55F58 39.19%, #ED3C5D 75.84%, #E43A5C 100%);
+
+    --cloud-1: #EBFFFE;
+    --cloud-2: #FF7D4B;
+}
+
+/* components */
+.sky-block, .ocean {
+    width: 100%;
+}
+
+.sky-block { height: 290px; }
+.sky-block-1 { background: var(--sky-1);}
+.sky-block-2 { background: var(--sky-2);}
+
+.ocean { 
+    position: relative; 
+    z-index: 10;
+    height: 300px;
+    border-top-width: 2px;
+    border-top-style: solid;
+}
+.ocean-1 { 
+    background: var(--ocean-1); 
+    border-top-color: #FFF4E0;
+}
+.ocean-2 { 
+    background: var(--ocean-2); 
+    border-top-color: #FA7A7B;
+}
+
+/* cloud */
+.cloud { 
+    z-index: 10; 
+    position: absolute; 
+    top: 0; 
+}
+.cloud-afternoon {
+    fill: var(--cloud-1);
+    stroke: #fff;
+}
+.cloud-sunset {
+    fill: var(--cloud-2);
+    stroke: #FFCE52;
+}
+
+/* sun */
+.sun-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    display: grid;
+    justify-items: center;
+}
+.sun {
+    height: 250px;
+    width: 250px;
+    border-radius: 250px;
+    transition: all 1s ease-in-out;
+}
+.sun-1 {
+    background: var(--sun-1);
+    transition: all 1s ease-in-out;
+}
+.sun-2 {
+    background: var(--sun-2);
+    transition: all 1s ease-in-out;
+}
+
+.bird { position: absolute; z-index: 12; }
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    display: grid;
+    row-gap: 40px;
+}
+.wave-afternoon { fill: #fff; }
+.wave-sunset { fill: #EFB9C5; }
+
+/* sand */
+.sand {
+    position: absolute;
+    z-index: 10;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+}
+
+.sand-sunset path:nth-child(1) {
+    fill: #F0764F;
+}
+.sand-sunset path:nth-child(2) {
+    fill: #EAB678;
+}
+.sand-sunset path:nth-child(3) {
+    fill: #D3573C;
+}
+
+
+.tree {
+    position: absolute;
+    z-index: 12;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+}
